@@ -1,38 +1,37 @@
-const listaSelecaoPokedevs = document.querySelectorAll(".pokedev");
+const listaSelecaonarutoP = document.querySelectorAll(".naruto");
 
-listaSelecaoPokedevs.forEach(pokedev => {
-	pokedev.addEventListener("click", () => {
-		esconderCartaoPokedev();
+listaSelecaonarutoP.forEach(naruto => {
+	naruto.addEventListener("click", () => {
+		esconderCartaoNaruto();
 
-		const idPokedevSelecionado = mostrarCartaoPokedevSelecionado(pokedev);
+		const idNarutoSelecionado = mostrarCartaoNarutoSelecionado(naruto);
 
-		desativarPokedevNaListagem();
-		ativarPokedevSelecionadoNaListagem(idPokedevSelecionado);
+		desativarNarutoNaListagem();
+		ativarNarutoSelecionadoNaListagem(idNarutoSelecionado);
 
 	})
 })
 
 
-function ativarPokedevSelecionadoNaListagem(idPokedevSelecionado) {
-	const pokedevSelecionadoNaListagem = document.getElementById(idPokedevSelecionado);
-	pokedevSelecionadoNaListagem.classList.add("ativo");
+function ativarNarutoSelecionadoNaListagem(idNarutoSelecionado) {
+	const narutoSelecionadoNaListagem = document.getElementById(idNarutoSelecionado);
+	narutoSelecionadoNaListagem.classList.add("ativo");
 }
 
-function desativarPokedevNaListagem() {
-	const pokedevAtivoNaListagem = document.querySelector(".ativo");
-	pokedevAtivoNaListagem.classList.remove("ativo");
+function desativarNarutoNaListagem() {
+	const narutoAtivoNaListagem = document.querySelector(".ativo");
+	narutoAtivoNaListagem.classList.remove("ativo");
 }
 
-function mostrarCartaoPokedevSelecionado(pokedev) {
-	const idPokedevSelecionado = pokedev.attributes.id.value;
-	const idDoCartaoPokedevParaAbrir = "cartao-" + idPokedevSelecionado;
-	const cartaoPokedevParaAbrir = document.getElementById(idDoCartaoPokedevParaAbrir);
-	cartaoPokedevParaAbrir.classList.add("aberto");
-	return idPokedevSelecionado;
+function mostrarCartaoNarutoSelecionado(naruto) {
+	const idNarutoSelecionado = naruto.attributes.id.value;
+	const idDoCartaoNarutoParaAbrir = "cartao-" + idNarutoSelecionado;
+	const cartaoNarutoParaAbrir = document.getElementById(idDoCartaoNarutoParaAbrir);
+	cartaoNarutoParaAbrir.classList.add("aberto");
+	return idNarutoSelecionado;
 }
 
-function esconderCartaoPokedev() {
-	const cartaoPokedevAberto = document.querySelector(".aberto");
-	cartaoPokedevAberto.classList.remove("aberto");
+function esconderCartaoNaruto() {
+	const cartaoNarutoAberto = document.querySelector(".aberto");
+	cartaoNarutoAberto.classList.remove("aberto");
 }
-
